@@ -44,13 +44,13 @@
 	--font-black: 900;
 
 	/* ---------- Bottom Margins ------------------ */
-	--bm-0-25: 0.25rem;
-	--bm-0-5: 0.5rem;
-	--bm-0-75: 0.75rem;
-	--bm-1: 1rem;
-	--bm-1-5: 1.5rem;
-	--bm-2: 2rem;
-	--bm-2-5: 2.5rem;
+	--mb-0-25: 0.25rem;
+	--mb-0-5: 0.5rem;
+	--mb-0-75: 0.75rem;
+	--mb-1: 1rem;
+	--mb-1-5: 1.5rem;
+	--mb-2: 2rem;
+	--mb-2-5: 2.5rem;
 
 	/* ---------- z index ------------------------- */
 	--z-tooltip: 10;
@@ -131,7 +131,7 @@ button {
 
 .section-title {
 	font-size: var(--h2-font-size);
-	margin-bottom: var(--bm-2);
+	margin-bottom: var(--mb-2);
 	text-align: center;
 }
 
@@ -139,8 +139,8 @@ button {
 
 .container {
 	max-width: 968px;
-	margin-left: var(--bm-1-5);
-	margin-right: var(--bm-1-5);
+	margin-left: var(--mb-1-5);
+	margin-right: var(--mb-1-5);
 }
 
 .grid {
@@ -148,5 +148,96 @@ button {
 }
 
 .main {
-	overflow: hidden; /* For animations */
+	/* For animations */
+	/* overflow-x: hidden; */
+}
+
+/* ---------- Header ---------------------------------- */
+
+.header {
+	width: 100%;
+	/* background: var(--body-color); */
+	background: red;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: var(--z-fixed);
+}
+
+/* ---------- Nav ------------------------------------- */
+
+.nav {
+	height: var(--header-height);
+	display: flex;
+	align-content: space-between;
+	align-items: center;
+}
+
+.nav-logo {
+	display: flex;
+	align-items: center;
+	column-gap: 0.5rem;
+	font-weight: var(--font-medium);
+}
+
+.nav-logo-img {
+	width: 300px;
+}
+
+.nav-link,
+.nav-toggle,
+.nav-logo,
+.nav-close {
+	color: var(--title-color);
+}
+
+.nav-toggle {
+	font-size: 1.25rem;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+	.nav-menu {
+		position: fixed;
+		width: 100%;
+		background: var(--container-color);
+		top: 0;
+		left: 0;
+		padding: 3.5rem 0;
+		transition: 0.4s;
+		z-index: var(--z-fixed);
+		border-radius: 0 0 1.5rem 1.5rem;
+	}
+}
+
+.nav-img {
+	width: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.nav-close {
+	font-size: 1.8rem;
+	position: absolute;
+	top: 0.5rem;
+	right: 0.7rem;
+	cursor: pointer;
+}
+
+.nav-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 1.5rem;
+}
+
+.nav-link {
+	text-transform: uppercase;
+	font-weight: var(--font-black);
+	transition: 0.4s;
+}
+
+.nav-link:hover {
+	color: var(--text-color);
 }
